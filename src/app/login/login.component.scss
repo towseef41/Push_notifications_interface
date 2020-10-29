@@ -1,0 +1,173 @@
+section {
+  background: #ffffff;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+.loginDivWrap {
+  width: fit-content;
+  background: #f9f9f9;
+  border-radius: 24px;
+}
+.loginTxt {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 156.5%;
+  align-items: center;
+  text-align: center;
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+.logo {
+  height: 100px;
+}
+
+.login-Btn {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  line-height: 100%;
+  align-items: center;
+  background: #43a9dd;
+  border-radius: 8px;
+  padding: 1.3rem 2rem;
+  border: none;
+  float: right;
+  font-weight: bold;
+}
+.forgotpswd {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 156.5%;
+  display: flex;
+  color: #43a9dd;
+  float: left;
+  position: relative;
+  top: 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.forgotpswd:hover {
+  font-size: 16.2px;
+  color: #43a9dd;
+  transition: ease-in-out;
+}
+.errorMsg {
+  float: left;
+  padding: 0 0 10px 10px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  color: var(--error);
+  letter-spacing: 0.12em;
+}
+.text-initial {
+  text-align: initial;
+}
+
+mat-label {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  margin-left: 10px;
+  letter-spacing: 0.5px;
+}
+
+:host ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: white;
+}
+
+:host ::ng-deep .mat-icon {
+  color: #43a9dd;
+}
+
+::ng-deep .mat-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ------------------ MatInput Custom Styling --------------------- */
+
+.mat-form-field {
+  width: 400px;
+  min-width: 250px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: rgb(0, 0, 0, 0.4);
+}
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+  background: var(--input-bg);
+  box-shadow: var(--input-shadow);
+  border-radius: 8px;
+  margin: 2px;
+}
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  padding: 3px;
+}
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0.7em 0 1.2em 0;
+}
+
+:host ::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: var(--input-border);
+  padding-top: 0 !important;
+}
+
+/* --------------------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .loginDivWrap {
+    background: inherit !important;
+    box-shadow: unset !important;
+    border-radius: 0 !important;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 50px !important;
+  }
+  :host ::ng-deep .mat-form-field {
+    display: inline !important;
+  }
+  .forgotpswd {
+    top: -30px !important;
+  }
+  .login-Btn {
+    width: -webkit-fill-available !important;
+  }
+}
+
+@media (min-width: 600px) {
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loginDivWrap {
+    padding: 3rem 5rem;
+  }
+}

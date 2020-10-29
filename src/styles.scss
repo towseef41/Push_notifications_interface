@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css?family=DM+Sans&display=swap");
+
+:root {
+  --main-bg: #f9f9f9;
+  --main-content: #f2f2f2;
+  --content-shadow: 16px 4px 64px rgba(18, 61, 101, 0.3),
+    -16px -16px 40px rgba(255, 255, 255, 0.8),
+    inset -8px -6px 80px rgba(255, 255, 255, 0.18);
+  --color-primary: #c8a965;
+  --color-secondary: #1b3391;
+  --color-primary-shadow: 1px 1px 2px rgba(119, 54, 7, 0.3),
+    -1px 0px 2px rgba(254, 237, 224, 0.2);
+  --btn-primary: linear-gradient(83.96deg, #c4a460 7.61%, #ecd695 72.75%);
+  --btn-primary-shadow: 4px 12px 32px rgba(244, 102, 0, 0.42),
+    -6px -6px 16px rgba(255, 255, 255, 0.6);
+  --input-bg: #ffffff;
+  --input-shadow: normal;
+  --input-border: transparent;
+  --error: red;
+  --text-color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100% !important;
+  height: 100% !important;
+  font-family: DM Sans !important;
+  font-style: normal;
+  background: white;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+button:focus {
+  outline: 0 !important;
+}
+button[disabled] {
+  opacity: 0.4 !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/*----------------custom error toast -------------------- */
+
+.toast-error,
+.toast-success {
+  font-family: DM Sans;
+  font-size: 14px !important;
+  letter-spacing: 0.005em;
+  height: 70px;
+  background-color: rgb(0, 0, 0, 0.8) !important;
+  width: 500px !important;
+  min-width: 300px !important;
+  min-width: 300px !important;
+  display: flex;
+  align-items: center;
+  border-radius: 7px !important;
+  z-index: 10000;
+}
+
+.toast-success {
+  border-left: 15px solid #5dbc82 !important;
+  background-image: url(assets/images/tick.svg) !important;
+}
+.toast-error {
+  background-image: url(assets/images/error.png) !important;
+  border-left: 15px solid red !important;
+}
+
+@media (max-width: 560px) {
+  .toast-error,
+  .toast-success {
+    max-width: 280px;
+  }
+}

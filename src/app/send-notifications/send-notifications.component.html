@@ -1,0 +1,90 @@
+<div class="navBar">
+  <button mat-button class="logout" (click)="logout()">Logout</button>
+</div>
+<section>
+  <div class="loginDivWrap text-center">
+    <div class="container text-center" style="text-align: center !important">
+      <img class="logo pb-2" src="assets/images/logo.webp" /><br />
+      <span class="loginTxt">Send Notifications</span><br />
+    </div>
+    <br />
+    <div class="d-block mt-5 mb-5 text-center">
+      <form
+        class="example-form m-auto mb-5 text-initial"
+        [formGroup]="notiFicationForm"
+      >
+        <mat-label>Title</mat-label>
+        <mat-form-field appearance="outline">
+          <input
+            matInput
+            class="input_field"
+            type="text"
+            formControlName="title"
+            placeholder="Enter Title"
+          /> </mat-form-field
+        ><br />
+        <div class="d-grid">
+          <span
+            class="errorMsg"
+            *ngIf="
+              notiFicationForm.controls.title.touched &&
+              !notiFicationForm.controls.title.value
+            "
+          >
+            Field is<strong> required</strong>
+          </span>
+        </div>
+        <br /><br />
+
+        <mat-label>Message</mat-label>
+        <mat-form-field appearance="outline">
+          <textarea
+            matInput
+            class="input_field overflow-hidden"
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="5"
+            cdkAutosizeMaxRows="10"
+            formControlName="message"
+            placeholder="Enter message"
+            maxlength="500"
+          ></textarea></mat-form-field
+        ><br />
+        <div class="d-grid">
+          <span
+            class="errorMsg"
+            *ngIf="
+              notiFicationForm.controls.message.touched &&
+              !notiFicationForm.controls.message.value
+            "
+          >
+            Field is<strong> required</strong>
+          </span>
+
+          <span class="errorMsg" *ngIf="errorMsg">
+            {{ errorMsg }}
+          </span>
+        </div>
+        <br /><br />
+
+        <div class="d-flex align-items-center">
+          <button
+            mat-button
+            class="login-Btn"
+            type="button"
+            (click)="sendMessage()"
+          >
+            Send Notification
+            <mat-spinner
+              strokeWidth="3"
+              [diameter]="20"
+              class="ml-4"
+              *ngIf="spinner"
+            >
+            </mat-spinner>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

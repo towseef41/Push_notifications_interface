@@ -1,0 +1,99 @@
+<section>
+  <div class="loginDivWrap text-center">
+    <div class="container text-center" style="text-align: center !important">
+      <img class="logo pb-2" src="assets/images/logo.webp" /><br />
+      <span class="loginTxt">Welcome back,</span><br />
+      <span class="loginTxt">Please sign in to continue</span>
+    </div>
+    <br />
+    <div class="d-block mt-5 mb-5 text-center">
+      <form
+        class="example-form m-auto mb-5 text-initial"
+        [formGroup]="loginForm"
+      >
+        <mat-label>Phone</mat-label>
+        <mat-form-field appearance="outline">
+          <input
+            matInput
+            class="input_field"
+            type="text"
+            formControlName="Phone"
+            placeholder="Enter your phone number"
+            maxlength="10"
+            onkeypress="return (event.charCode > 47 && event.charCode < 58) || (event.charCode > 42 && event.charCode < 44)"
+          /> </mat-form-field
+        ><br />
+        <div class="d-grid">
+          <span
+            class="errorMsg"
+            *ngIf="
+              loginForm.controls.Phone.touched &&
+              !loginForm.controls.Phone.value
+            "
+          >
+            Field is<strong> required</strong>
+          </span>
+          <span
+            class="errorMsg"
+            *ngIf="
+              loginForm.controls.Phone.value && loginForm.controls.Phone.invalid
+            "
+            >Please enter a valid phone number</span
+          >
+
+          <span class="errorMsg" *ngIf="errorMsg"> {{ errorMsg[0] }} </span>
+        </div>
+        <br /><br />
+        <mat-label>Password</mat-label>
+        <mat-form-field appearance="outline">
+          <input
+            matInput
+            class="input_field"
+            [type]="hide ? 'password' : 'text'"
+            id="password"
+            (keyup.enter)="login()"
+            formControlName="Password"
+            placeholder="Enter password"
+          />
+
+          <a
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </a> </mat-form-field
+        ><br />
+
+        <div class="d-grid">
+          <span
+            class="errorMsg"
+            *ngIf="
+              loginForm.controls.Password.touched &&
+              loginForm.controls.Password.invalid
+            "
+          >
+            Field is <strong>required</strong>
+          </span>
+          <span class="errorMsg" *ngIf="errorMsg"> {{ errorMsg[1] }} </span>
+        </div>
+        <br /><br />
+
+        <div class="m-auto">
+          <button mat-button class="login-Btn" type="button" (click)="login()">
+            Sign in
+            <mat-spinner
+              strokeWidth="3"
+              [diameter]="20"
+              class="ml-4"
+              *ngIf="spinner"
+            >
+            </mat-spinner>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
